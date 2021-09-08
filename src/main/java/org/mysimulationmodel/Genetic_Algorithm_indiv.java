@@ -15,7 +15,7 @@ public class Genetic_Algorithm_indiv
     static double crossRate = .9;
     static double mutRate = .01;
     static Random rand = new Random();
-    static int populationSize = 22;
+    static int populationSize = 40;
     static int chromolength=3;
     static int m_sid;
     static String m_uid;
@@ -87,7 +87,7 @@ public class Genetic_Algorithm_indiv
             //System.out.println(m_uid+ " s_id "+ m_sid + " i "+  population.get(population.size()-1).getScore()+" "+
             //population.get(population.size()-1).chromo);
 
-            if (gen==20)
+            if (gen==50)
             {
                 System.out.println(m_uid+ " s_id 1 fs"+ m_sid +" finish "+  population.get(population.size()-1).getScore()+" "+
                         population.get(population.size()-1).chromo);
