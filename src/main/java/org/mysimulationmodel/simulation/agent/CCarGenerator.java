@@ -113,16 +113,14 @@ public class CCarGenerator extends IBaseAgentGenerator<IBaseRoadUser>
         if (  l_input.m_start_cycle == 0 )
         {
             m_environment.initialset(l_car);
-            // add car to the pedestrian's list
+            // add car to the car's list
             m_environment.initialCar(l_car);
         }
         else
         {
-            //int l_creatingCycle = ( l_input.m_start_cycle - 4 ) > 0 ?  ( l_input.m_start_cycle - 4 ) : 0;
             m_environment.addCartoInitializeLater().computeIfAbsent(l_input.m_start_cycle, k -> new ArrayList<>()).add(l_car);//l_input.m_start_cycle
         }
         l_car.setTrue( l_input.m_start_cycle );
-        //System.out.println( l_car.getname()+"id"+l_car.getPosition() +"car_start_end"+ l_car.getGoalposition());
         return l_car;
     }
 }

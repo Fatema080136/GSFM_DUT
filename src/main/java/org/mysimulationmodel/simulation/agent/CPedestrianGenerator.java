@@ -107,24 +107,22 @@ public final class CPedestrianGenerator extends IBaseAgentGenerator<IBaseRoadUse
             l_pedestrian.setSpeed(( rand.nextGaussian() * m_GaussianStandardDeviation + m_GaussianMean )* m_pixelpermeter * m_environment.getTimestep());
             l_pedestrian.setMaxSpeed(( rand.nextGaussian() * m_GaussianStandardDeviationMaxSpeed + m_GaussianMeanMaxSpeed ) * m_pixelpermeter * m_environment.getTimestep());
         }*/
-//        l_pedestrian.setMaxSpeed( ( rand.nextGaussian() * m_GaussianStandardDeviationMaxSpeed + m_GaussianMeanMaxSpeed )
-//                *m_environment.getTimestep() );
+        // l_pedestrian.setMaxSpeed( ( rand.nextGaussian() * m_GaussianStandardDeviationMaxSpeed + m_GaussianMeanMaxSpeed )
+        //                *m_environment.getTimestep() );
         l_pedestrian.setVelocity( l_pedestrian.getSpeed(), l_pedestrian.getGoalposition(), l_pedestrian.getPosition() );
 
         // add car to the agent's list
         if ( l_ped.m_start_cycle == 0 )
         {
             m_environment.initialset(l_pedestrian);
-            // add car to the pedestrian's list
+            // add pedestrian to the pedestrian's list
             m_environment.initialPedestrian(l_pedestrian);
         }
         else
         {
-            //int l_creatingCycle = ( l_ped.m_start_cycle - 4 ) > 0 ?  ( l_ped.m_start_cycle - 4 ) : 0;
             m_environment.addPedtoInitializeLater().computeIfAbsent( l_ped.m_start_cycle, k -> new ArrayList<>()).add(l_pedestrian);
         }
         l_pedestrian.setTrue( l_ped.m_start_cycle );
-        //System.out.println( l_pedestrian.getname()+"id"+l_pedestrian.getPosition() +"ped_start_end"+ l_pedestrian.getGoalposition());
 
         return l_pedestrian;
 

@@ -25,10 +25,6 @@ import java.util.stream.IntStream;
  * Created by fatema on 14.03.2018.
  * Class for game host (an central entity for all game)
  * randomly chosen leader
- * @todo run genetic algotithm both with and without helpingfunctionofacceleration
- * @todo NoSC need to initialize
- * @todo add rules to decide leader
- * @todo in case of multiple conflicts not multi-user conflict pedestrian need to select one of all strategies he/she got by playing with multiple users
  */
 @IAgentAction
 public final class CHostAgent extends IBaseAgent<CHostAgent>

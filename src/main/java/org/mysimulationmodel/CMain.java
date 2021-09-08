@@ -46,12 +46,12 @@ final class CMain
 
         CEnvironment l_env = new CEnvironment();
 
-        JFrame l_frame = new JFrame("Multiagent-based Simulation");
+        /*JFrame l_frame = new JFrame("Multiagent-based Simulation");
         l_frame.add( l_env );
 
         l_frame.setSize( l_env.getWidth(), l_env.getHeight() );
         l_frame.setVisible( true );
-        l_frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );
+        l_frame.setDefaultCloseOperation( WindowConstants.EXIT_ON_CLOSE );*/
 
         l_env.setScenario(p_senarioid);
         List<CInputFormat> l_roadusers = CCsvFileReader.readDataFromCSV(System.getProperty("user.dir").concat("/start_end_dut_extended.csv"), p_senarioid);//start_end_dut_pca
